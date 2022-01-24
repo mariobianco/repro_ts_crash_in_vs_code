@@ -1,0 +1,13 @@
+{
+    "name": "repro_ts_plugin_crash_in_vs_code",
+    "author": {
+        "name": "Mario Bianco"
+    },
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {},
+    "dependencies": {},
+    "devDependencies": {
+        "cypress": "^9.3.1"
+    }
+}

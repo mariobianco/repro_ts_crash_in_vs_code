@@ -1,0 +1,82 @@
+{
+    // --------------------------------------------------------------------------------------------------------------
+    // The 'esModuleInterop' or 'typeAcquisition.enable' properties by themselves are not the issue
+    // --------------------------------------------------------------------------------------------------------------
+    // Permutation A: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS",
+    //   "esModuleInterop": false
+    // }
+
+    // Permutation B: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS",
+    //   "esModuleInterop": true
+    // }
+
+    // Permutation C: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS"
+    // },
+    // "typeAcquisition": {
+    //   "enable": false
+    // }
+
+    // Permutation D: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS"
+    // },
+    // "typeAcquisition": {
+    //   "enable": true
+    // }
+
+    // --------------------------------------------------------------------------------------------------------------
+    // Mixing the 'esModuleInterop' and the 'typeAcquisition.enable' properties is fine as long as they are both not true
+    // --------------------------------------------------------------------------------------------------------------
+    // Permutation E: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS",
+    //   "esModuleInterop": false
+    // },
+    // "typeAcquisition": {
+    //   "enable": false
+    // }
+
+    // Permutation F: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS",
+    //   "esModuleInterop": false
+    // },
+    // "typeAcquisition": {
+    //   "enable": true
+    // }
+
+    // Permutation G: The TypeScript language service loads fine
+    // "compilerOptions": {
+    //   "target": "ESNEXT",
+    //   "module": "CommonJS",
+    //   "esModuleInterop": true
+    // },
+    // "typeAcquisition": {
+    //   "enable": false
+    // }
+
+    // --------------------------------------------------------------------------------------------------------------
+    // Setting both the 'esModuleInterop' and the 'typeAcquisition.enable' properties to true is when it crashes
+    // --------------------------------------------------------------------------------------------------------------
+    // Permutation H: The TypeScript language service crashes
+    "compilerOptions": {
+      "target": "ESNEXT",
+      "module": "CommonJS",
+      "esModuleInterop": true
+    },
+    "typeAcquisition": {
+      "enable": true
+    }
+}
